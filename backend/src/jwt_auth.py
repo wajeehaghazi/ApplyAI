@@ -25,8 +25,11 @@ def verify_jwt_token(token: str) -> str:
         raise AuthenticationError("Invalid token: JWT decoding failed")
     
 
+from fastapi import Header
+
 def get_current_user(
     authorization: str = Header(...)) -> str:
+    
     """
     Extract Bearer token from Authorization header
     and return authenticated user_id.

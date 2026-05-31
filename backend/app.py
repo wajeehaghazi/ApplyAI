@@ -204,3 +204,10 @@ def get_applications():
     return {
         "message": "Applications endpoint coming soon"
     }
+
+
+@app.get("/")
+def root():
+    return {
+        "message": "ApplyAI API running"
+    }
